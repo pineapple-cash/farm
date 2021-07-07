@@ -5,12 +5,7 @@ async function login() {
     try {
         user = await Moralis.Web3.authenticate();
         console.log(user);
-        Swal.fire({
-  title: 'Error!',
-  text: 'Do you want to continue',
-  icon: 'error',
-  confirmButtonText: 'Cool'
-}),
+        swal("Here's a message!", "It's pretty, isn't it?")
     } catch (error) {
         console.log(error);
     }
