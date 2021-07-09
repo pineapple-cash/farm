@@ -2,7 +2,8 @@ Moralis.initialize("4Pp7HcDpTbRQ1iaBOvbsZ0nLab85QRG3M2iukLT6"); // Application i
 Moralis.serverURL = "https://sipuqul9does.moralis.io:2053/server"; //Server url from moralis.io
 
 const appHeaderContainer = document.getElementById("app-header-btns");
-// const contentContainer = document.getElementById("content");
+const appUsernameContainer = document.getElementById("displayUsername");
+const contentContainer = document.getElementById("content");
 
 async function logOut() {
   await Moralis.User.logOut();
@@ -121,6 +122,15 @@ function renderHeader() {
       <button id="btn-logout">Logout</button>
     `;
   document.getElementById("btn-logout").onclick = logOut;
+}
+
+function renderUsername() {
+  const user = Moralis.User.current();
+  if (!user) {
+    return;
+  }
+  // show the logout, refresh buttons if user logged in
+  appUsernameContainer.innerHTML = `<p>${user.attributes.username || ""}</p>`;
 }
 
 function buildLoginComponent(isSignUp = false) {
@@ -340,13 +350,7 @@ async function onSaveProfile(event) {
   }
 }
 
-function displayUserInfo() {
-  const user = Moralis.User.current();
-  if (!user) {
-    return;
-  }
-document.getElementById("displayUsername").innerHTML = user.attributes.username;
-}
+
 
 function render() {
   const user = Moralis.User.current();
