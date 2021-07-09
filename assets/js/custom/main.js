@@ -340,6 +340,10 @@ async function onSaveProfile(event) {
   }
 }
 
+function displayUsername() {
+  document.getElementById("displayUsername") = user.attributes.username;
+}
+
 function render() {
   const user = Moralis.User.current();
   renderHeader();
