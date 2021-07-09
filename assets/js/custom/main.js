@@ -340,7 +340,13 @@ async function onSaveProfile(event) {
   }
 }
 
+function displayUserInfo() {
+  const user = Moralis.User.current();
+  if (!user) {
+    return;
+  }
 document.getElementById("displayUsername").innerHTML = user.attributes.username;
+}
 
 function render() {
   const user = Moralis.User.current();
