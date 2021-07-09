@@ -2,7 +2,7 @@ Moralis.initialize("4Pp7HcDpTbRQ1iaBOvbsZ0nLab85QRG3M2iukLT6"); // Application i
 Moralis.serverURL = "https://sipuqul9does.moralis.io:2053/server"; //Server url from moralis.io
 
 const appHeaderContainer = document.getElementById("app-header-btns");
-const contentContainer = document.getElementById("content");
+// const contentContainer = document.getElementById("content");
 
 async function logOut() {
   await Moralis.User.logOut();
