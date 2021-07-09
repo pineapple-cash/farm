@@ -340,9 +340,7 @@ async function onSaveProfile(event) {
   }
 }
 
-function displayUsername() {
-  document.getElementById("displayUsername") = user.attributes.username;
-}
+document.getElementById("displayUsername").innerHTML = user.attributes.username;
 
 function render() {
   const user = Moralis.User.current();
