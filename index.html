@@ -27,7 +27,15 @@
     <link rel="stylesheet" href="assets/css/custom/style.css">
     <!-- End Layout styles -->
     <link rel="shortcut icon" href="assets/images/favicon.ico" />
-
+	<style>
+		div#content_name p {
+				white-space: pre-wrap;
+				word-break: break-word;
+				color:#fff !important;
+				font-weight: bold;
+				margin: 0;
+			}
+	</style>
   </head>
   <body>
     <div class="container-scroller">
@@ -57,11 +65,12 @@
               <div id="displayUsername"></div>
               <a href="my-farm.html" class="nav-link">
                 <div class="profile-image">
-                  <img class="img-xs rounded-circle" src="assets/images/faces/face8.jpg" alt="profile image">
+                  <img class="img-xs rounded-circle" src="assets/images/faces/no_profile.png" alt="profile image">
                   <div class="dot-indicator bg-success"></div>
                 </div>
-                <div class="text-wrapper">
-                  <p class="profile-name" id="displayUsername">Allen Moreno</p>
+                <div class="text-wrapper" id="content_name">
+				
+                  <p class="profile-name" >Allen Moreno</p>
                   <p class="designation">Premium user</p>
                 </div>
               </a>
@@ -487,5 +496,16 @@
     <script src="assets/js/custom/dashboard.js"></script>
     <!-- End custom js for this page-->
     <script src="assets/js/shared/jquery.cookie.js" type="text/javascript"></script>
+	<!--script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script-->
+<script>
+$(document).ready(function(){
+	//var name = $('#name').val();
+	//if(name){
+	//	$('#displayUsername_name').text(name);
+	//}
+	
+  }); 
+
+</script>
   </body>
 </html>

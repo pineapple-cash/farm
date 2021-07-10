@@ -4,6 +4,7 @@ Moralis.serverURL = "https://sipuqul9does.moralis.io:2053/server"; //Server url 
 const appHeaderContainer = document.getElementById("app-header-btns");
 const appUsernameContainer = document.getElementById("displayUsername");
 const contentContainer = document.getElementById("content");
+const contentContainer_name = document.getElementById("content_name");
 
 async function logOut() {
   await Moralis.User.logOut();
@@ -17,7 +18,6 @@ async function loginWithMetaMask() {
     user = await Moralis.Web3.authenticate();
   }
   console.log(user);
-
   render();
 }
 
@@ -207,6 +207,10 @@ function buildProfileComponent(user) {
   `;
 }
 
+function buildProfileComponentForUser(user) {
+  return `<p>${user.attributes.username || ""}</p>`;
+}
+
 function buildAddrListComponent(user) {
   // add each address to the list
   let addressItems = "";
@@ -240,7 +244,9 @@ function buildAddrListComponent(user) {
 }
 
 function renderProfile(user) {
+	
   contentContainer.innerHTML = buildProfileComponent(user);
+  contentContainer_name.innerHTML = buildProfileComponentForUser(user);
   document.getElementById("btn-profile-set-pass").onclick = onSetPassword;
   document.getElementById("btn-profile-save").onclick = onSaveProfile;
   document.querySelectorAll(".btn-remove").forEach(function (button) {
@@ -354,6 +360,8 @@ async function onSaveProfile(event) {
 
 function render() {
   const user = Moralis.User.current();
+  console.log('fffg00');
+  console.log(user);
   renderHeader();
   if (user) {
     renderProfile(user);
