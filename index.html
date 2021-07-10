@@ -27,15 +27,16 @@
     <link rel="stylesheet" href="assets/css/custom/style.css">
     <!-- End Layout styles -->
     <link rel="shortcut icon" href="assets/images/favicon.ico" />
-	<style>
-		div#content_name p {
-				white-space: pre-wrap;
-				word-break: break-word;
-				color:#fff !important;
-				font-weight: bold;
-				margin: 0;
-			}
-	</style>
+    <style>
+      div#content_name p {
+        color: #fff !important;
+        font-weight: bold;
+        margin: 0;
+        overflow: hidden;
+        width: 11ch;
+        text-overflow: ellipsis;
+      }
+    </style>
   </head>
   <body>
     <div class="container-scroller">
@@ -69,7 +70,7 @@
                   <div class="dot-indicator bg-success"></div>
                 </div>
                 <div class="text-wrapper" id="content_name">
-				
+
                   <p class="profile-name" >Allen Moreno</p>
                   <p class="designation">Premium user</p>
                 </div>
@@ -503,8 +504,8 @@ $(document).ready(function(){
 	//if(name){
 	//	$('#displayUsername_name').text(name);
 	//}
-	
-  }); 
+
+  });
 
 </script>
   </body>
