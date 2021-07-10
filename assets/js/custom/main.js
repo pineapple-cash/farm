@@ -205,7 +205,7 @@ function buildProfileComponentForUser(user) {
     <div class="profile-image">
       <img class="img-xs rounded-circle" src="assets/images/faces/no_profile.png" alt="profile image">
     </div>
-    <div class="text-wrapper">
+    <div class="text-wrapper" id="display_user_name">
       <p>${user.attributes.username || ""}</p>
     </div>
   </a>`;
