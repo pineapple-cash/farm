@@ -201,7 +201,14 @@ function buildProfileComponent(user) {
 
 // Display the current username
 function buildProfileComponentForUser(user) {
-  return `<p>${user.attributes.username || ""}</p>`;
+  return `<a href="my-farm.html" class="nav-link">
+    <div class="profile-image">
+      <img class="img-xs rounded-circle" src="assets/images/faces/no_profile.png" alt="profile image">
+    </div>
+    <div class="text-wrapper">
+      <p>${user.attributes.username || ""}</p>
+    </div>
+  </a>`;
 }
 
 function buildAddrListComponent(user) {
@@ -237,7 +244,7 @@ function buildAddrListComponent(user) {
 }
 
 
-// Render elements to display on frontend 
+// Render elements to display on frontend
 
 function renderProfile(user) {
 
