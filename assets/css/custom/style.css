@@ -521,11 +521,13 @@
       .sidebar > .nav .nav-item.active > .nav-link i {
         color: inherit; }
     .sidebar > .nav .nav-item.nav-profile {
-      max-width: 270px;
+      width: 270px;
       margin-right: auto;
       margin-left: auto;
       margin-top: 30px;
-      margin-bottom: 30px; }
+      margin-bottom: 30px;
+      padding-left: 12px;
+      padding-right: 12px; }
       .sidebar > .nav .nav-item.nav-profile .nav-link {
         display: flex;
         border-radius: 3px;

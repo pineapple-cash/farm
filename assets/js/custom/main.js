@@ -2,7 +2,6 @@ Moralis.initialize("4Pp7HcDpTbRQ1iaBOvbsZ0nLab85QRG3M2iukLT6"); // Application i
 Moralis.serverURL = "https://sipuqul9does.moralis.io:2053/server"; //Server url from moralis.io
 
 const appHeaderContainer = document.getElementById("app-header-btns");
-const appUsernameContainer = document.getElementById("displayUsername");
 const contentContainer = document.getElementById("content");
 const contentContainer_name = document.getElementById("content_name");
 
@@ -124,14 +123,7 @@ function renderHeader() {
   document.getElementById("btn-logout").onclick = logOut;
 }
 
-function renderUsername() {
-  const user = Moralis.User.current();
-  if (!user) {
-    return;
-  }
-  // show the logout, refresh buttons if user logged in
-  appUsernameContainer.innerHTML = `<p>${user.attributes.username || ""}</p>`;
-}
+
 
 function buildLoginComponent(isSignUp = false) {
   const btnSignUp = isSignUp
@@ -207,6 +199,7 @@ function buildProfileComponent(user) {
   `;
 }
 
+// Display the current username
 function buildProfileComponentForUser(user) {
   return `<p>${user.attributes.username || ""}</p>`;
 }
@@ -243,8 +236,11 @@ function buildAddrListComponent(user) {
   `;
 }
 
+
+// Render elements to display on frontend 
+
 function renderProfile(user) {
-	
+
   contentContainer.innerHTML = buildProfileComponent(user);
   contentContainer_name.innerHTML = buildProfileComponentForUser(user);
   document.getElementById("btn-profile-set-pass").onclick = onSetPassword;
