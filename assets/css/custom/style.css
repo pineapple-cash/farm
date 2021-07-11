@@ -587,6 +587,13 @@
       .sidebar > .nav:not(.sub-menu) > .nav-item:hover:not(.nav-profile):not(.hover-open) > .nav-link:not([aria-expanded="true"]) .menu-arrow:before {
         color: #bfccda; }
 
+
+        div#app-header-btns {
+            margin: auto;
+            margin-top: -18px;
+            margin-bottom: 18px;
+        }
+
 /* style for off-canvas menu*/
 @media screen and (max-width: 991px) {
   .sidebar-offcanvas {
