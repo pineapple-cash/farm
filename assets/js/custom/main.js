@@ -216,7 +216,6 @@ function buildProfileComponentForUsernameOnly(user) {
   return `<span class="userNameSpan">${user.attributes.username || ""}</span>`;
 }
 
-var usernamesimple = `<span class="usernamesimplespan">${user.attributes.username || ""}</span>`;
 
 
 function buildAddrListComponent(user) {
@@ -258,7 +257,7 @@ function renderProfile(user) {
 
   contentContainer.innerHTML = buildProfileComponent(user);
   contentContainer_name.innerHTML = buildProfileComponentForUser(user);
-  document.getElementById("usernamesimple").innerHTML = usernamesimple;
+  document.getElementById("usernamesimple").innerHTML = buildProfileComponentForUsernameOnly(user);
   document.getElementById("btn-profile-set-pass").onclick = onSetPassword;
   document.getElementById("btn-profile-save").onclick = onSaveProfile;
   document.querySelectorAll(".btn-remove").forEach(function (button) {
