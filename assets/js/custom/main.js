@@ -211,9 +211,14 @@ function buildProfileComponentForUser(user) {
   </a>`;
 }
 
-// Display the current username only
-function buildProfileComponentForUsernameOnly(user) {
-  return `<span class="userNameSpan">${user.attributes.username || ""}</span>`;
+// Display a user greeting
+function buildProfileComponentForUserGreeting(user) {
+  return `<b>Hello ${user.attributes.username || ""}!</b>`;
+}
+
+// Generate user referal link
+function buildProfileComponentForUserRef(user) {
+  return `<p><b>Referral Link: </b><a href="#">https://farm.pineapplecash.com/?ref=${user.attributes.username || ""}</a></p>`;
 }
 
 
@@ -257,7 +262,8 @@ function renderProfile(user) {
 
   contentContainer.innerHTML = buildProfileComponent(user);
   contentContainer_name.innerHTML = buildProfileComponentForUser(user);
-  document.getElementById("usernamesimple").innerHTML = buildProfileComponentForUsernameOnly(user);
+  document.getElementById("usernamegreeting").innerHTML = buildProfileComponentForUserGreeting(user);
+  document.getElementById("usernameref").innerHTML = buildProfileComponentForUserRef(user);
   document.getElementById("btn-profile-set-pass").onclick = onSetPassword;
   document.getElementById("btn-profile-save").onclick = onSaveProfile;
   document.querySelectorAll(".btn-remove").forEach(function (button) {
