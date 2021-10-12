@@ -199,7 +199,7 @@ function buildProfileComponent(user) {
   `;
 }
 
-// Display the current username
+// Display the current username & photo
 function buildProfileComponentForUser(user) {
   return `<a href="my-farm.html" class="nav-link">
     <div class="profile-image">
@@ -210,6 +210,12 @@ function buildProfileComponentForUser(user) {
     </div>
   </a>`;
 }
+
+// Display the current username only
+function buildProfileComponentForUsernameOnly(user) {
+  return `<span class="userNameSpan">${user.attributes.username || ""}</span>`;
+}
+
 
 function buildAddrListComponent(user) {
   // add each address to the list
@@ -250,6 +256,7 @@ function renderProfile(user) {
 
   contentContainer.innerHTML = buildProfileComponent(user);
   contentContainer_name.innerHTML = buildProfileComponentForUser(user);
+  contentContainer_usernamesimple.innerHTML = buildProfileComponentForUsernameOnly(user);
   document.getElementById("btn-profile-set-pass").onclick = onSetPassword;
   document.getElementById("btn-profile-save").onclick = onSaveProfile;
   document.querySelectorAll(".btn-remove").forEach(function (button) {
